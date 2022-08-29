@@ -58,7 +58,7 @@ function init(){
 
 	tl.from(".logo2", {duration:.3, opacity:0}, "+=.1")
 	tl.from(".t2", {duration:.3, opacity:0}, "+=.3")
-	tl.to(".njas", {duration:.2, opacity:0}, "+=3")
+	tl.to(".njas", {duration:.2, opacity:0}, "+=2.1")
 
 	tl.from([".t3", ".logo3"], {duration:.3, opacity:0}, "+=.2")
 	tl.from([".footer", ".cta"], {duration:.3, opacity:0}, "+=.5")
