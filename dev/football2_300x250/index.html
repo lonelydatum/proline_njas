@@ -34,7 +34,19 @@
 
 
 		<img class="retina t1 t1a" src="../_common/images/300x250/football2/t1a.png" />
-		<img class="retina t1 t1b" src="../_common/images/300x250/football2/t1b.png" />
+		
+			
+		
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="500" class="retina t1 t1b">
+		  <defs>
+		    <filter id="colorMask2">
+		      <feFlood flood-color="#ffffff" result="flood"></feFlood>
+		      <feComposite in="SourceGraphic" in2="flood" operator="arithmetic" k1="1" k2="0" k3="0" k4="0"></feComposite>
+		    </filter>
+		  </defs>
+		  <image width="100%" height="100%" xlink:href="../_common/images/300x250/football2/t1b.png" filter="url(#colorMask2)"></image>
+
+		</svg>
 
 
 
@@ -47,7 +59,7 @@
 		<img class="retina logo3" src="../_common/images/300x250/football2/logo3.png" />
 		<img class="retina t3" src="../_common/images/300x250/football2/t3.png" />
 		<img class="retina cta" src="../_common/images/300x250/football2/cta.png" />
-		<img class="retina footer" src="../_common/images/300x250/football2/footer.png" />
+		<img class="retina footer" src="../_common/images/300x250/football2/footer.png" /> 
 
 		<!-- <img class="retina end" src="../_common/images/300x250/football2/__.png" /> -->
 	</div>	
@@ -85,6 +97,8 @@
                 c-2.5,0-4.5-2-4.5-4.5c0-2.5,2-4.5,4.5-4.5c1.2,0,2.3,0.5,3.1,1.3l2.9-1.4C85.2,68.6,83,67.5,80.6,67.5" data-svg-origin="80 75" transform="matrix(1,0,0,1,0,0)" style="transform-origin: 0px 0px;"></path>
         </g>
         </svg>
+	
+	
 </div>
 
 

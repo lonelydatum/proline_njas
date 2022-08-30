@@ -1,1 +1,48 @@
-<% include ../_common/templates/_olg %>
+
+
+<div id="banner" onclick="javascript:window.open(window.clickTag);">
+	<div class="outline"></div>
+	
+	<div class="frame frame1">
+		
+		<img class="bg retina" src="../_common/images/<%= size %>/<%= name %>/bg.jpg" />
+		<img class="retina hero" src="../_common/images/<%= size %>/<%= name %>/hero.png" />
+		<img class="retina logo1" src="../_common/images/<%= size %>/<%= name %>/logo1.png" />
+
+
+		<img class="retina t1 t1a" src="../_common/images/<%= size %>/<%= name %>/t1a.png" />
+		
+			
+		
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="500" class="retina t1 t1b">
+		  <defs>
+		    <filter id="colorMask2">
+		      <feFlood flood-color="#ffffff" result="flood"></feFlood>
+		      <feComposite in="SourceGraphic" in2="flood" operator="arithmetic" k1="1" k2="0" k3="0" k4="0"></feComposite>
+		    </filter>
+		  </defs>
+		  <image width="100%" height="100%" xlink:href="../_common/images/<%= size %>/<%= 	name %>/t1b.png" filter="url(#colorMask2)"></image>
+
+		</svg>
+
+
+
+		<img class="retina njas logo2" src="../_common/images/<%= size %>/<%= name %>/logo2.png" />
+		<img class="retina njas t2" src="../_common/images/<%= size %>/<%= name %>/t2.png" />
+
+		
+
+
+		<img class="retina logo3" src="../_common/images/<%= size %>/<%= name %>/logo3.png" />
+		<img class="retina t3" src="../_common/images/<%= size %>/<%= name %>/t3.png" />
+		<img class="retina cta" src="../_common/images/<%= size %>/<%= name %>/cta.png" />
+		<img class="retina footer" src="../_common/images/<%= size %>/<%= name %>/footer.png" /> 
+
+		<!-- <img class="retina end" src="../_common/images/<%= size %>/<%= name %>/__.png" /> -->
+	</div>	
+	
+	<% include ../_common/templates/_end %>
+	
+	
+</div>
+
