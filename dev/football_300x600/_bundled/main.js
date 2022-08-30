@@ -72,10 +72,10 @@ function tint() {
 	tl.to(".t1b", { duration: duration, ease: "power3.easein", scale: .7 }, "t1-scale-start");
 	tl.to(".t1b feFlood", { duration: .3, floodColor: '#ffd100' }, "t1-scale-start");
 
-	tl.add("t1-scale-normal", "+=.3");
+	tl.add("t1-scale-normal", "+=.2");
 	tl.to(".t1a", { duration: .2, ease: "power3.easein", y: "+=" + y }, "t1-scale-normal");
 	tl.to(".t1b", { duration: .2, ease: "power3.easein", scale: .5 }, "t1-scale-normal");
-	tl.to(".t1b feFlood", { duration: .3, floodColor: '#ffffff' }, "t1-scale-normal");
+	tl.to(".t1b feFlood", { duration: .5, floodColor: '#ffffff' }, "t1-scale-normal");
 	return tl;
 }
 
@@ -83,17 +83,13 @@ function b_300x250__() {
 	origin(".t1b", 300, 320);
 
 	var tl = init();
-	// tl.add("f1")
 
-	// tl.from(".hero", {duration:.4, x:"+=200", opacity:0, ease:"power4.out"}, "f1")
-	// tl.from(".logo1", {duration:.4, x:"+=200", opacity:0}, "f1+=1.15")
-
-	tl.to(".logo1", { duration: .2, opacity: 0 }, "+=1");
+	tl.to(".logo1", { duration: .2, opacity: 0 }, "+=.6");
 	tl.add("t1");
 	tl.from(".t1a", { duration: .3, x: "-=130", y: "+=30", opacity: 0 }, "t1");
-	tl.from(".t1b", { duration: .3, x: "+=130", y: "-=30", opacity: 0 }, "t1+=1");
+	tl.from(".t1b", { duration: .3, x: "+=130", y: "-=30", opacity: 0 }, "t1+=.6");
 
-	tl.add(tint());
+	tl.add(tint(), "+=.5");
 
 	tl.to([".hero", ".bg", ".t1"], { duration: .2, opacity: 0 }, "+=1");
 
