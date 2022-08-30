@@ -7,6 +7,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _proline = require("./proline");
 
+var _helpersHelpersJs = require("./helpers/helpers.js");
+
 var banner = document.getElementById('banner');
 var bannerSize = { w: banner.offsetWidth, h: banner.offsetHeight };
 
@@ -59,10 +61,6 @@ function b_300x250() {
 	return tl;
 }
 
-function origin(el, x, y) {
-	TweenLite.set(el, { transformOrigin: x + "px " + y + "px", x: -x / 2 + "px", y: -y / 2 + "px", scale: .5 });
-}
-
 function tint() {
 	var tl = new TimelineMax();
 	var y = 15;
@@ -75,12 +73,12 @@ function tint() {
 	tl.add("t1-scale-normal", "+=.2");
 	tl.to(".t1a", { duration: .2, ease: "power3.easein", y: "+=" + y }, "t1-scale-normal");
 	tl.to(".t1b", { duration: .2, ease: "power3.easein", scale: .5 }, "t1-scale-normal");
-	tl.to(".t1b feFlood", { duration: .5, floodColor: '#ffffff' }, "t1-scale-normal");
+	// tl.to(".t1b feFlood", {duration:.5, floodColor:'#ffffff'}, "t1-scale-normal")
 	return tl;
 }
 
 function b_300x250__() {
-	origin(".t1b", 300, 320);
+	(0, _helpersHelpersJs.origin)(".t1b", 300, 320);
 
 	var tl = init();
 
@@ -129,7 +127,19 @@ exports.b_300x250 = b_300x250;
 exports.b_300x600 = b_300x600;
 exports.b_300x250__ = b_300x250__;
 
-},{"./proline":2}],2:[function(require,module,exports){
+},{"./helpers/helpers.js":2,"./proline":3}],2:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+function origin(el, x, y) {
+	TweenLite.set(el, { transformOrigin: x + "px " + y + "px", x: -x / 2 + "px", y: -y / 2 + "px", scale: .5 });
+}
+
+exports.origin = origin;
+
+},{}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -152,14 +162,14 @@ function olg() {
 
 exports.olg = olg;
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 'use strict';
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
 (0, _commonJsCommonJs.b_300x600)();
 
-},{"../../_common/js/common.js":1}]},{},[3])
+},{"../../_common/js/common.js":1}]},{},[4])
 
 
 //# sourceMappingURL=main.js.map

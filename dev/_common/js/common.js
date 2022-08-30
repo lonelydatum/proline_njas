@@ -1,4 +1,5 @@
 import {olg} from "./proline"
+import {origin} from "./helpers/helpers.js"
 const banner = document.getElementById('banner')
 const bannerSize = {w:banner.offsetWidth, h:banner.offsetHeight}
 
@@ -64,10 +65,7 @@ function b_300x250(){
 	
 }
 
-function origin(el, x, y) {
-	TweenLite.set(el, {transformOrigin:`${x}px ${y}px`, x:`${-x/2}px`, y:`${-y/2}px`, scale:.5})
 
-}
 
 function tint(){
 	const tl = new TimelineMax()
@@ -81,7 +79,7 @@ function tint(){
 	tl.add("t1-scale-normal", "+=.2")
 	tl.to(".t1a", {duration:.2, ease:"power3.easein", y:`+=${y}`}, "t1-scale-normal")
 	tl.to(".t1b", {duration:.2, ease:"power3.easein", scale:.5}, "t1-scale-normal")
-	tl.to(".t1b feFlood", {duration:.5, floodColor:'#ffffff'}, "t1-scale-normal")
+	// tl.to(".t1b feFlood", {duration:.5, floodColor:'#ffffff'}, "t1-scale-normal")
 	return tl
 }
 
