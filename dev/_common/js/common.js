@@ -75,57 +75,40 @@ function standard(){
 	tl.from(".logo2", {duration:.3, opacity:0}, "+=.1")
 	tl.from(".t2", {duration:.3, opacity:0}, "+=.3")
 	tl.to(".text2", {duration:.2, opacity:0}, `+=${read.njasb}`)
-
-	tl.add(ender())
-	return tl
-}
-
-
-function b_300x600__(){		
-	const tl = init()
-	tl.add(slider(), "+=.5")
-	tl.from(".logo2", {duration:.3, opacity:0}, "+=.1")
-	tl.from(".t2", {duration:.3, opacity:0}, "+=.3")
-	tl.to(".text2", {duration:.2, opacity:0}, `+=${read.percentGoBack}`)
-	
 	if(document.querySelector(".t2b")){
 		tl.add(fader(".t2b", read.betOnNFL))	
 	}
-	
 	tl.add(ender())
 	return tl
 }
 
+function b_970x250(){
+	b_728x90()
+}
 
 function b_160x600(){
-	origin(".t1b", 160, 640)
-	standard( .57, 6 )
+	standard()
 }
 
-function b_300x250(){	
-	origin(".t1b", 300, 320)
-	standard(.6, 7)
+function b_300x250(){		
+	standard()
 }
 
-function b_300x600(){	
-	origin(".t1b", 300, 680)
-	b_300x600__(.63, 15)
+function b_300x600(){		
+	standard()
 }
 
-function b_1000x700(){
-	origin(".t1b", 1000, 888)
-	b_300x600__(.63, 27)
+function b_1000x700(){	
+	standard()
 }
 
 function b_320x50(){
-	const tl = init()
-	tl.add(logoFader())
+	
+	const tl = new TimelineMax()
 	tl.add("t1")
-	tl.from(".t1a", {duration:.3,  x:"-=70", opacity:0}, "t1")
-	tl.from(".t1b", {duration:.3,  x:"+=70", opacity:0}, "t1")
-	tl.add(bgFadeOut(read.percentGoBack))	
-	tl.add(fader(".t2", read.njasb))	
-	tl.add(ender())	
+	tl.from(".t1a", {duration:.2,  x:"-=180"}, "t1")
+	tl.from(".t1b", {duration:.2,  x:"+=180"}, "t1")
+	b_728x90(tl)
 }
 
 function b_728x90(text1){
@@ -149,4 +132,4 @@ function b_728x90(text1){
 	tl.add(ender())
 }
 
-export { init, b_160x600, b_300x250, b_300x600, b_160x600, b_728x90, b_1000x700, b_320x50, origin }
+export { init, b_160x600, b_300x250, b_300x600, b_320x50, b_728x90, b_970x250, b_1000x700, origin }
