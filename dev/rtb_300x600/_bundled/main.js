@@ -110,6 +110,14 @@ function b_1000x700() {
 	standard();
 }
 
+function b_970x70() {
+
+	var tl = new TimelineMax();
+	tl.add("t1");
+	tl.from(".t1a", { duration: .11, y: "-=50" }, "t1");
+	b_728x90(tl);
+}
+
 function b_320x50() {
 
 	var tl = new TimelineMax();
@@ -146,6 +154,7 @@ exports.b_320x50 = b_320x50;
 exports.b_728x90 = b_728x90;
 exports.b_970x250 = b_970x250;
 exports.b_1000x700 = b_1000x700;
+exports.b_970x70 = b_970x70;
 exports.origin = _helpersHelpersJs.origin;
 
 },{"./helpers/helpers.js":2,"./proline":3}],2:[function(require,module,exports){

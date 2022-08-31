@@ -198,15 +198,15 @@ canvas, .text, .frame, .outline, img {
 
 #banner {
   width: 970px;
-  height: 250px;
+  height: 70px;
 }
 
 #olg {
-  width: 158px;
+  width: 138px;
   height: 81px;
-  -webkit-transform: translate(-2px, 169px);
-  -ms-transform: translate(-2px, 169px);
-  transform: translate(-2px, 169px);
+  -webkit-transform: translate(-2px, 3px);
+  -ms-transform: translate(-2px, 3px);
+  transform: translate(-2px, 3px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -215,16 +215,16 @@ canvas, .text, .frame, .outline, img {
 }
 
 #legalBtn {
-  -webkit-transform: translate(820px, 185px);
-  -ms-transform: translate(820px, 185px);
-  transform: translate(820px, 185px);
+  -webkit-transform: translate(840px, 20px);
+  -ms-transform: translate(840px, 20px);
+  transform: translate(840px, 20px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
   width: 140px;
-  height: 50px;
+  height: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */

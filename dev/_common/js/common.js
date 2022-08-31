@@ -102,6 +102,14 @@ function b_1000x700(){
 	standard()
 }
 
+function b_970x70(){
+
+const tl = new TimelineMax()
+tl.add("t1")
+tl.from(".t1a", {duration:.11, y:"-=50"}, "t1")
+	b_728x90(tl)
+}
+
 function b_320x50(){
 	
 	const tl = new TimelineMax()
@@ -132,4 +140,4 @@ function b_728x90(text1){
 	tl.add(ender())
 }
 
-export { init, b_160x600, b_300x250, b_300x600, b_320x50, b_728x90, b_970x250, b_1000x700, origin }
+export { init, b_160x600, b_300x250, b_300x600, b_320x50, b_728x90, b_970x250, b_1000x700,b_970x70, origin }
