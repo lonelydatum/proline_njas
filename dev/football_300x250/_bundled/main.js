@@ -16,8 +16,42 @@ gsap.defaults({
 	ease: "power3.out"
 });
 
+var read = {
+	percentGoBack: 2.5,
+	betOnNFL: 2.2,
+	njasb: 2,
+	losingBy: 3
+};
+
 var w = bannerSize.w;
 var h = bannerSize.h;
+
+function logoFader() {
+	var tl = new TimelineMax();
+	tl.to(".logo1", { duration: .2, opacity: 0 }, "+=.5");
+	return tl;
+}
+
+function bgFadeOut(read) {
+	var tl = new TimelineMax();
+	tl.to([".bg", ".t1"], { duration: .2, opacity: 0 }, "+=" + read);
+	return tl;
+}
+
+function fader(el, time) {
+	var tl = new TimelineMax();
+	tl.from(el, { duration: .3, opacity: 0 }, "+=.2");
+	tl.to(el, { duration: .3, opacity: 0 }, "+=" + time);
+	return tl;
+}
+
+function ender() {
+	var tl = new TimelineMax();
+	tl.from([".t3", ".logo3"], { duration: .3, opacity: 0 }, "+=.2");
+	tl.from([".footer", ".cta"], { duration: .3, opacity: 0 }, "+=.5");
+	tl.add((0, _proline.olg)());
+	return tl;
+}
 
 function init() {
 	var tl = new TimelineMax({ onComplete: function onComplete() {
@@ -29,70 +63,109 @@ function init() {
 	return tl;
 }
 
-function b_160x600() {
-	b_300x250();
-}
-
-function tint() {
+function tint(scale, y) {
 	var tl = new TimelineMax();
-	var y = 15;
-	var duration = .3;
-	tl.add("t1-scale-start");
-	tl.to(".t1a", { duration: duration, ease: "power3.easein", y: "-=" + y }, "t1-scale-start");
-	tl.to(".t1b", { duration: duration, ease: "power3.easein", scale: .7 }, "t1-scale-start");
-	tl.to(".t1b feFlood", { duration: .3, floodColor: '#ffd100' }, "t1-scale-start");
+	tl.add(logoFader());
 
-	tl.add("t1-scale-normal", "+=.2");
-	tl.to(".t1a", { duration: .2, ease: "power3.easein", y: "+=" + y }, "t1-scale-normal");
-	tl.to(".t1b", { duration: .2, ease: "power3.easein", scale: .5 }, "t1-scale-normal");
-	return tl;
-}
-
-function b_300x250() {
-	(0, _helpersHelpersJs.origin)(".t1b", 300, 320);
-	var tl = init();
-	tl.to(".logo1", { duration: .2, opacity: 0 }, "+=.6");
 	tl.add("t1");
 	tl.from(".t1a", { duration: .3, x: "-=130", y: "+=30", opacity: 0 }, "t1");
 	tl.from(".t1b", { duration: .3, x: "+=130", y: "-=30", opacity: 0 }, "t1+=.6");
 
-	tl.add(tint(), "+=.5");
-	tl.to([".hero", ".bg", ".t1"], { duration: .2, opacity: 0 }, "+=1");
+	var duration = .3;
+	tl.add("t1-scale-start");
+	tl.to(".t1a", { duration: duration, ease: "power3.easein", y: "-=" + y }, "t1-scale-start");
+	tl.to(".t1b", { duration: duration, ease: "power3.easein", scale: scale }, "t1-scale-start");
 
-	tl.from(".logo2", { duration: .3, opacity: 0 }, "+=.1");
-	tl.from(".t2", { duration: .3, opacity: 0 }, "+=.3");
-	tl.to(".njas", { duration: .2, opacity: 0 }, "+=2.1");
+	tl.add("t1-scale-normal", "+=.2");
+	tl.to(".t1a", { duration: .2, ease: "power3.easein", y: "+=" + y }, "t1-scale-normal");
+	tl.to(".t1b", { duration: .2, ease: "power3.easein", scale: .5 }, "t1-scale-normal");
 
-	tl.from([".t3", ".logo3"], { duration: .3, opacity: 0 }, "+=.2");
-	tl.from([".footer", ".cta"], { duration: .3, opacity: 0 }, "+=.5");
-
-	tl.add((0, _proline.olg)());
-
+	tl.add(bgFadeOut(2));
 	return tl;
 }
 
-function b_300x600() {
-	var tl = hero();
+function standard() {
+	var scale = arguments.length <= 0 || arguments[0] === undefined ? .7 : arguments[0];
+	var y = arguments.length <= 1 || arguments[1] === undefined ? 12 : arguments[1];
 
+	var tl = init();
+	tl.add(tint(scale, y), "+=.5");
 	tl.from(".logo2", { duration: .3, opacity: 0 }, "+=.1");
 	tl.from(".t2", { duration: .3, opacity: 0 }, "+=.3");
-	tl.to(".njas", { duration: .2, opacity: 0 }, "+=2.8");
+	tl.to(".text2", { duration: .2, opacity: 0 }, "+=" + read.njasb);
 
-	tl.from(".t2b", { duration: .3, opacity: 0 }, "+=.1");
-	tl.to(".t2b", { duration: .3, opacity: 0 }, "+=3");
-
-	tl.from([".t3", ".logo3"], { duration: .3, opacity: 0 }, "+=.2");
-	tl.from([".footer", ".cta"], { duration: .3, opacity: 0 }, "+=.5");
-
-	tl.add((0, _proline.olg)());
-
+	tl.add(ender());
 	return tl;
+}
+
+function b_300x600__() {
+	var scale = arguments.length <= 0 || arguments[0] === undefined ? .63 : arguments[0];
+	var y = arguments.length <= 1 || arguments[1] === undefined ? 15 : arguments[1];
+
+	var tl = init();
+	tl.add(tint(scale, y), "+=.5");
+	tl.from(".logo2", { duration: .3, opacity: 0 }, "+=.1");
+	tl.from(".t2", { duration: .3, opacity: 0 }, "+=.3");
+	tl.to(".text2", { duration: .2, opacity: 0 }, "+=" + read.percentGoBack);
+	tl.add(fader(".t2b", read.betOnNFL));
+	tl.add(ender());
+	return tl;
+}
+
+function b_160x600() {
+	(0, _helpersHelpersJs.origin)(".t1b", 160, 640);
+	standard(.57, 6);
+}
+
+function b_300x250() {
+	(0, _helpersHelpersJs.origin)(".t1b", 300, 320);
+	standard(.6, 7);
+}
+
+function b_300x600() {
+	(0, _helpersHelpersJs.origin)(".t1b", 300, 680);
+	b_300x600__(.63, 15);
+}
+
+function b_1000x700() {
+	(0, _helpersHelpersJs.origin)(".t1b", 1000, 888);
+	b_300x600__(.63, 27);
+}
+
+function b_320x50() {
+	var tl = init();
+	tl.add(logoFader());
+	tl.add("t1");
+	tl.from(".t1a", { duration: .3, x: "-=70", opacity: 0 }, "t1");
+	tl.from(".t1b", { duration: .3, x: "+=70", opacity: 0 }, "t1");
+	tl.add(bgFadeOut(read.percentGoBack));
+	tl.add(fader(".t2", read.njasb));
+	tl.add(ender());
+}
+
+function b_728x90() {
+	(0, _helpersHelpersJs.origin)(".t1b", 160, 640);
+	var tl = init();
+	tl.add(logoFader());
+	tl.add("t1");
+	tl.from(".t1a", { duration: .3, y: "-=70", opacity: 0 }, "t1");
+	tl.from(".t1b", { duration: .3, y: "+=70", opacity: 0 }, "t1");
+
+	tl.add(bgFadeOut(read.losingBy));
+
+	tl.add(fader(".t2", read.percentGoBack));
+	tl.add(fader([".t2b", ".logo2"], read.betOnNFL));
+	tl.add(ender());
 }
 
 exports.init = init;
 exports.b_160x600 = b_160x600;
 exports.b_300x250 = b_300x250;
 exports.b_300x600 = b_300x600;
+exports.b_160x600 = b_160x600;
+exports.b_728x90 = b_728x90;
+exports.b_1000x700 = b_1000x700;
+exports.b_320x50 = b_320x50;
 
 },{"./helpers/helpers.js":2,"./proline":3}],2:[function(require,module,exports){
 "use strict";
