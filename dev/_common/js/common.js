@@ -51,6 +51,10 @@ function init(){
 		}
 	}})
 	tl.set(".frame1", {opacity:1})
+	if(window.universalBanner.name==="hockey"){
+		
+		document.getElementById("legalContent").innerHTML = "Terms and conditions apply.  Individuals must be 19 years of age or older to participate in online sports betting made available by OLG.  Must be a resident of Ontario located in the province at the time of registration, where applicable, and play. © NHL 2022.  All Rights Reserved."
+	}
 	return tl
 }
 
