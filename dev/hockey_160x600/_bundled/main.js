@@ -162,6 +162,12 @@ exports.b_970x250 = b_970x250;
 exports.b_1000x700 = b_1000x700;
 exports.b_970x70 = b_970x70;
 exports.origin = _helpersHelpersJs.origin;
+exports.standard = standard;
+exports.read = read;
+exports.slider = slider;
+exports.ender = ender;
+exports.logoFader = logoFader;
+exports.bgFadeOut = bgFadeOut;
 
 },{"./helpers/helpers.js":2,"./proline":3}],2:[function(require,module,exports){
 "use strict";
@@ -199,11 +205,34 @@ function olg() {
 exports.olg = olg;
 
 },{}],4:[function(require,module,exports){
-'use strict';
+"use strict";
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-(0, _commonJsCommonJs.b_160x600)();
+function slider() {
+	var read = arguments.length <= 0 || arguments[0] === undefined ? 2 : arguments[0];
+
+	var tl = new TimelineMax();
+	tl.add((0, _commonJsCommonJs.logoFader)());
+
+	tl.add("t1");
+
+	tl.from(".t1a", { duration: .26, x: "-=130", y: "+=30", opacity: 0 }, "t1");
+	tl.from(".t1b", { duration: .26, x: "+=130", y: "-=30", opacity: 0 }, "t1+=.6");
+	tl.from(".black", { duration: .4, opacity: 0 }, "t1+=.6");
+	tl.add((0, _commonJsCommonJs.bgFadeOut)(read));
+	return tl;
+}
+
+var tl = (0, _commonJsCommonJs.init)();
+tl.add(slider(), "+=.5");
+tl.from(".logo2", { duration: .3, opacity: 0 }, "+=.1");
+tl.from(".t2", { duration: .3, opacity: 0 }, "+=.3");
+tl.to(".text2", { duration: .2, opacity: 0 }, "+=" + _commonJsCommonJs.read.njasb);
+if (document.querySelector(".t2b")) {
+	tl.add(fader(".t2b", _commonJsCommonJs.read.betOnNFL));
+}
+tl.add((0, _commonJsCommonJs.ender)());
 
 },{"../../_common/js/common.js":1}]},{},[4])
 
