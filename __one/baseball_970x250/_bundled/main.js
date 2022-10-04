@@ -60,6 +60,12 @@ function init() {
 			}
 		} });
 	tl.set(".frame1", { opacity: 1 });
+	if (window.universalBanner.name === "hockey") {
+
+		document.getElementById("legalContent").innerHTML = "Terms and conditions apply.  Individuals must be 19 years of age or older to participate in online sports betting made available by OLG.  Must be a resident of Ontario located in the province at the time of registration, where applicable, and play. © NHL 2022.  All Rights Reserved.";
+	} else if (window.universalBanner.name === "baseball") {
+		document.getElementById("legalContent").innerHTML = "Terms and conditions apply.  Individuals must be 19 years of age or older to participate in online sports betting made available by OLG.  Must be a resident of Ontario located in the province at the time of registration, where applicable, and play. Major League Baseball trademarks and copyrights are used with permission of Major League Baseball. Visit MLB.com";
+	}
 	return tl;
 }
 
@@ -156,6 +162,12 @@ exports.b_970x250 = b_970x250;
 exports.b_1000x700 = b_1000x700;
 exports.b_970x70 = b_970x70;
 exports.origin = _helpersHelpersJs.origin;
+exports.standard = standard;
+exports.read = read;
+exports.slider = slider;
+exports.ender = ender;
+exports.logoFader = logoFader;
+exports.bgFadeOut = bgFadeOut;
 
 },{"./helpers/helpers.js":2,"./proline":3}],2:[function(require,module,exports){
 "use strict";
@@ -193,11 +205,16 @@ function olg() {
 exports.olg = olg;
 
 },{}],4:[function(require,module,exports){
-'use strict';
+"use strict";
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-(0, _commonJsCommonJs.b_970x250)();
+var tl = new TimelineMax();
+tl.add("t1");
+tl.from(".t1a", { duration: .17, y: "-=130" }, "t1");
+tl.from(".t1b", { duration: .17, y: "+=130" }, "t1+=.4");
+
+(0, _commonJsCommonJs.b_728x90)(tl);
 
 },{"../../_common/js/common.js":1}]},{},[4])
 
