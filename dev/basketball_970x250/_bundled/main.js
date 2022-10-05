@@ -207,11 +207,15 @@ function olg() {
 exports.olg = olg;
 
 },{}],4:[function(require,module,exports){
-'use strict';
+"use strict";
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-(0, _commonJsCommonJs.b_970x250)();
+var tl = new TimelineMax();
+tl.add("t1");
+tl.from(".t1a", { duration: .17, y: "-=120" }, "t1");
+tl.from(".t1b", { duration: .17, y: "+=120" }, "t1+=.2");
+(0, _commonJsCommonJs.b_728x90)(tl);
 
 },{"../../_common/js/common.js":1}]},{},[4])
 

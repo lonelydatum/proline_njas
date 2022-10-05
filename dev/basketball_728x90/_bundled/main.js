@@ -213,8 +213,8 @@ var _commonJsCommonJs = require('../../_common/js/common.js');
 
 var tl = new TimelineMax();
 tl.add("t1");
-tl.from(".t1a", { duration: .17, y: "-=50" }, "t1");
-tl.from(".t1b", { duration: .17, y: "+=50" }, "t1+=.4");
+tl.from(".t1a", { duration: .17, y: "-=70" }, "t1");
+tl.from(".t1b", { duration: .17, y: "+=70" }, "t1+=.3");
 
 (0, _commonJsCommonJs.b_728x90)(tl);
 
